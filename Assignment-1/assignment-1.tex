@@ -138,8 +138,37 @@ and latex-tikz codes from
 https://github.com/cmapsi/AI1103-Probability-and-random-variables/blob/main/Assignment-9/main.tex
 \end{lstlisting}
 \section{Problem}
-Determine if the points 
+Determine if the points
+\begin{align}
+    \begin{pmatrix} 1 \\ 5 \end{pmatrix},\,
+    \begin{pmatrix} 2 \\ 3 \end{pmatrix},\,
+    \begin{pmatrix} -2 \\ -11 \end{pmatrix}
+\end{align}
+are collinear
 
 \section{solution}
+If the the points are collinear then assuming the points are represented by vectors $\mathbf{A},\, \mathbf{B},\, \mathbf{C}$
+then for some $\lambda \in \mathbb{R}-\cbrak{0} $
+\begin{align}
+    \brak{\mathbf{A-B}} = \lambda \brak{\mathbf{A-C}} \label{eq:condition}
+\end{align}
 
+Here
+\begin{align}
+    &\mathbf{A}=\begin{pmatrix} 1 \\ 5 \end{pmatrix},\\
+    &\mathbf{B}=\begin{pmatrix} 2 \\ 3 \end{pmatrix},\\
+    &\mathbf{C}=\begin{pmatrix} -2 \\-11 \end{pmatrix}
+\end{align}
+The vectors 
+\begin{align}
+    &\mathbf{A-B}=\begin{pmatrix} -1 \\ 2 \end{pmatrix},\\
+    &\mathbf{A-C}=\begin{pmatrix} 3 \\ 16 \end{pmatrix}
+\end{align}
+Clearly, \eqref{eq:condition} doesn't hold. Therefore, the given points are not collinear.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figure/figure}
+    \caption{Plot of the points}
+    \label{plot}
+    \end{figure}
 \end{document}
