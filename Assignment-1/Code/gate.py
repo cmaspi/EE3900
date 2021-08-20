@@ -7,18 +7,19 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sympy.matrices import Matrix
 
-# x coords of input
-x=np.array([1,2,-2])
-# y coords of input
-y=np.array([5,3,-11])
+#input points
+A=np.array([1,5])
+B=np.array([2,3])
+C=np.array([-2,-11])
 
-input=np.array([x,y])
-
-# input as a matrix
-input=input.reshape(2,3)
+#printing input
+print("A:\n ",A)
+print("B:\n ",B)
+print("C:\n ",C)
 
 #Making the M matrix
-M=Matrix([input[:,1]-input[:,0],input[:,2]-input[:,0]])
+M=Matrix([B-A,C-A])
+
 # verifing M with what was calculated in tex file
 print(M)
 
@@ -27,13 +28,17 @@ M_rref = M.rref()
 print("The reff of matrix M is given as : ",M_rref)
 
 # Calculating the rank of Matrix M (here M and N respresent same matrix)
-N=np.array([input[:,1]-input[:,0],input[:,2]-input[:,0]])
+N=np.array([B-A,C-A])
 print ("rank of matrix = ",np.linalg.matrix_rank(N))
 
-fig,ax=plt.subplots()
-for i in range(3):
-    ax.scatter(x[i],y[i])
-    ax.annotate(chr(65+i),(x[i],y[i]),(x[i]-0.07,y[i]+0.35))
+
+#plotting the points
+plt.plot(A[0], A[1], 'o')
+plt.text(A[0], A[1] * (1 + 0.1) , 'A')
+plt.plot(B[0], B[1], 'o')
+plt.text(B[0] * (1 + 0.05), B[1] * (1) , 'B')
+plt.plot(C[0], C[1], 'o')
+plt.text(C[0]*(1+0.05), C[1] * (1 - 0.05) , 'C')
 plt.plot(np.array([1,2]),np.array([5,3]), 'b', label="$AB$")
 plt.plot(np.array([2,-2]), np.array([3,-11]),'r', label="$BC$")
 plt.plot(np.array([1,-2]), np.array([5,-11]),'g', label="$CA$")
