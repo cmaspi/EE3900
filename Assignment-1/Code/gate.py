@@ -6,11 +6,27 @@ Assignment-1 Vectors
 import numpy as np
 import matplotlib.pyplot as plt
 from sympy.matrices import Matrix
+
+# x coords of input
 x=np.array([1,2,-2])
+# y coords of input
 y=np.array([5,3,-11])
-M=Matrix([[1, -2], [-3, -16]])
+
+input=np.array([x,y])
+
+# input as a matrix
+input=input.reshape(2,3)
+
+#Making the M matrix
+M=Matrix([input[:,1]-input[:,0],input[:,2]-input[:,0]])
+# verifing M with what was calculated in tex file
+print(M)
+
+# taking rref of M matrix
 M_rref = M.rref()
 print("The reff of matrix M is given as : ",M_rref)
+
+
 fig,ax=plt.subplots()
 for i in range(3):
     ax.scatter(x[i],y[i])
