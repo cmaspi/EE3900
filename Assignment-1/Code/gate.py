@@ -26,6 +26,9 @@ print(M)
 M_rref = M.rref()
 print("The reff of matrix M is given as : ",M_rref)
 
+# Calculating the rank of Matrix M (here M and N respresent same matrix)
+N=np.array([input[:,1]-input[:,0],input[:,2]-input[:,0]])
+print ("rank of matrix = ",np.linalg.matrix_rank(N))
 
 fig,ax=plt.subplots()
 for i in range(3):
