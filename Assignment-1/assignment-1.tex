@@ -147,24 +147,24 @@ https://github.com/cmaspi/EE3900/blob/main/Assignment-1/assignment-1.tex
 are collinear
 
 \section{solution}
-If the the points are collinear,assuming the points are represented by vectors $\mathbf{A},\, \mathbf{B},\, \mathbf{C}$.
-Then for some $\lambda \in \mathbb{R}-\cbrak{0} $
-\begin{align}
-    \brak{\mathbf{A-B}} = \lambda \brak{\mathbf{A-C}} \label{eq:condition}
-\end{align}
-
-Here
+Let
 \begin{align}
     &\vec{A} = \myvec{1\\5},\\
     &\vec{B} = \myvec{2\\3},\\
     &\vec{C} = \myvec{-2\\-11}
 \end{align}
-The vectors 
+Lets define a matrix $\vec{M}$
 \begin{align}
-    &\vec{A-B}=\myvec{-1\\2},\\
-    &\vec{A-C}=\myvec{3\\16}
+    \vec{M}=\myvec{\vec{B-A} & \vec{C-A}}^T
 \end{align}
-Clearly, \eqref{eq:condition} doesn't hold. Therefore, the given points are not collinear.
+If $rank(\vec{M}) = 1$, the points are collinear.  The rank of a matrix is the number of nonzero rows left after doing row operations.  In this problem, 
+\begin{align}
+    \vec{M} = \myvec{1 & -2\\-3 & -16}\xleftrightarrow {R_2\leftarrow 5R_2-R_1}\myvec{1 & -2\\-16 & -78}
+    \\
+    \implies rank(\vec{M}) = 2
+    \end{align}
+Therefore, the points are not collinear
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{figure/figure}
