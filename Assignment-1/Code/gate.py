@@ -1,7 +1,7 @@
 '''
 Author: Chirag
 EE3900
-Assignment-1 Vectors 
+Assignment-1 Vectors
 '''
 import numpy as np
 import matplotlib.pyplot as plt
@@ -23,4 +23,3 @@ plt.xlim(-3,3)
 plt.ylim(-14,7)
 plt.legend(loc='lower right')
 plt.show()
-
