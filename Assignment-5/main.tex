@@ -144,7 +144,7 @@ $\myvec{-1 & 1}\vec{x}=1$ is a tangent to the curve $y^2=4x$
 The equation of line is given by 
 \begin{align}
     &\myvec{-1 & 1}\vec{x}=1 \\
-    &\vec{x}=\myvec{0 \\ 1}+\lambda \myvec{1 \\ 1}=\myvec{\lambda \\ \lambda+1} \label{eq:vector_form}
+    &\vec{x}=\vec{e_2}+\lambda \vec{1_2}
 \end{align}
 
 General equation of a conic is given by
@@ -155,17 +155,14 @@ for $y^2=4x$, the equation can be written as
 \begin{align}
     \vec{x}^T\myvec{0 & 0\\ 0 & 1}\vec{x}+4\myvec{-1 \\ 0}^Tx=0 \label{eq:parabola}
 \end{align}
-Using \eqref{eq:vector_form} and \eqref{eq:parabola}, we get
+
+Using the condition of tangency, we get
 \begin{align}
-    &\myvec{\lambda \\ \lambda +1}^T\myvec{0 & 0\\ 0 & 1}\myvec{\lambda \\ \lambda +1}-4\myvec{1 \\ 0}^T\myvec{\lambda \\ \lambda+1}=0  \\
-    &\myvec{0 & \lambda+1}\myvec{\lambda \\ \lambda +1}-4\lambda=0\\
-    &\lambda^2-2\lambda+1=0\\
-    &\lambda=1
-\end{align}
-The point of tangency is given by
-\begin{align}
-    \vec{x}=\myvec{0 \\ 1}+1\myvec{1 \\ 1}=\myvec{1 \\ 2}
-\end{align}
+    &\vec{m}^T(\vec{Vq+u})=0\\
+    & \vec{1_2}^T\brak{\myvec{0 & 0 \\ 0 & 1}\myvec{x \\ y}+\myvec{-2 \\ 0}}=0\\
+    & \vec{1_2}^T\myvec{-2 \\ y}=0 \\
+    \implies & y=2,\, x=1
+\end{align} 
 
 A plot for the line and parabola is given below
 \begin{figure}[!ht]
