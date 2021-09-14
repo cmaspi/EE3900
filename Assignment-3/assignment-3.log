@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.8)  14 SEP 2021 18:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2021.9.8)  14 SEP 2021 16:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1461,8 +1461,9 @@ Package multicol Warning: May not work with the twocolumn option on input line
 Package: chngcntr 2018/04/09 v1.1a change counter resetting
 Package chngcntr Info: \counterwithout already defined.
 (chngcntr)             Quitting chngcntr on input line 21.
-) (./main.aux)
-\openout1 = `main.aux'.
+)
+(./assignment-3.aux)
+\openout1 = `assignment-3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 68.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
@@ -1611,9 +1612,9 @@ LaTeX Info: Redefining \ref on input line 68.
 LaTeX Info: Redefining \pageref on input line 68.
 LaTeX Info: Redefining \nameref on input line 68.
 
-(./main.out) (./main.out)
+(./assignment-3.out) (./assignment-3.out)
 \@outlinefile=\write4
-\openout4 = `main.out'.
+\openout4 = `assignment-3.out'.
 
 \c@lstlisting=\count380
 \c@rem=\count381
@@ -1646,46 +1647,40 @@ LaTeX Font Info:    Trying to load font information for U+txsyc on input line 1
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
-)
-<plot/figure_1.png, id=39, 462.528pt x 346.896pt>
-File: plot/figure_1.png Graphic file (type png)
-<use plot/figure_1.png>
-Package pdftex.def Info: plot/figure_1.png  used on input line 178.
-(pdftex.def)             Requested size: 252.0pt x 189.00427pt.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
- <./plot/Figure_1.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 182.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 182.
- (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 182.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 182.
-Package rerunfilecheck Info: File `main.out' has not changed.
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 172.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 172.
+ (./assignment-3.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 172.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 172.
+Package rerunfilecheck Info: File `assignment-3.out' has not changed.
 (rerunfilecheck)             Checksum: 1210BCF5FEAE7A75A114051724EF25E7;85.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 182.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 172.
  ) 
 Here is how much of TeX's memory you used:
- 40684 strings out of 483107
- 911869 string characters out of 5964631
- 1336949 words of memory out of 5000000
- 54858 multiletter control sequences out of 15000+600000
- 594504 words of font info for 150 fonts, out of 8000000 for 9000
+ 40659 strings out of 483107
+ 911611 string characters out of 5964631
+ 1332850 words of memory out of 5000000
+ 54843 multiletter control sequences out of 15000+600000
+ 593154 words of font info for 148 fonts, out of 8000000 for 9000
  62 hyphenation exceptions out of 8191
- 60i,13n,91p,986b,1258s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 60i,14n,91p,986b,1258s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/txfonts/rtxsc.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/tx
 fonts/txex.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsy.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
-ype1/urw/times/utmri8a.pfb>
-Output written on main.pdf (1 page, 110339 bytes).
+fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on assignment-3.pdf (1 page, 40009 bytes).
 PDF statistics:
- 110 PDF objects out of 1000 (max. 8388607)
- 79 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
- 130 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
+ 15 named destinations out of 1000 (max. 500000)
+ 125 words of extra memory for PDF output out of 10000 (max. 10000000)
 
