@@ -141,28 +141,40 @@ https://github.com/cmaspi/EE3900/blob/main/Assignment-5/main.tex
 (Quadratic forms Q2.66) Find the point at which the line 
 $\myvec{-1 & 1}\vec{x}=1$ is a tangent to the curve $y^2=4x$
 \section{Solution}
-The equation of line is given by 
+The general form of a conic is given by
 \begin{align}
-    &\myvec{-1 & 1}\vec{x}=1 \\
-    &\vec{x}=\vec{e_2}+\lambda \vec{1_2}
+    \vec{x}^T\vec{Vx}+2\vec{u}^T\vec{x}+f=0 \label{eq:genConic}
+\end{align}
+for $y^2=4x$
+\begin{align}
+\vec{V}=\myvec{0 & 0 \\ 0 & 1},\ \vec{u}=\myvec{-2 \\0},\, f=0
+\end{align}
+For any given conic such that $\vec{V}$ is non-invertible, the points of tangency are given by
+\begin{align}
+    \vec{Vq}&=k\vec{n}-u \\
+    \text{where},\, k& = \frac{\vec{p_1}^T\vec{u}}{\vec{p_1}^T\vec{n}},\, \vec{Vp_1}=0
+\end{align}
+Clearly
+\begin{align}
+    \vec{p_1}& =\myvec{1\\0} \\
+    \implies k & =\frac{-2}{-1}=2
+\end{align}
+Using the obtained values
+\begin{align}
+    \vec{Vq}&=2\vec{n}-\vec{u}\\
+    \vec{Vq}&=\myvec{-2\\2}-\myvec{-2\\0}=2\vec{e_2}\\
+    \implies \vec{q} &= 2\vec{e_2}+\lambda\vec{e_1} \label{eq:q_almostfound}
+\end{align}
+Using \eqref{eq:q_almostfound} and \eqref{eq:genConic}, we get
+\begin{align}
+    2\vec{q}^T\vec{e_2}-4\vec{e_1}^T\vec{q}=0
+\end{align}
+Evaluating this, we get
+\begin{align}
+    4-\lambda&=0 \\
+    \implies \vec{q}&=\myvec{1\\2}
 \end{align}
 
-General equation of a conic is given by
-\begin{align}
-    \vec{x}^T\vec{Vx}+2\vec{u}^Tx+f=0
-\end{align}
-for $y^2=4x$, the equation can be written as
-\begin{align}
-    \vec{x}^T\myvec{0 & 0\\ 0 & 1}\vec{x}+4\myvec{-1 \\ 0}^Tx=0 \label{eq:parabola}
-\end{align}
-
-Using the condition of tangency, we get
-\begin{align}
-    &\vec{m}^T(\vec{Vq+u})=0\\
-    & \vec{1_2}^T\brak{\myvec{0 & 0 \\ 0 & 1}\myvec{x \\ y}+\myvec{-2 \\ 0}}=0\\
-    & \vec{1_2}^T\myvec{-2 \\ y}=0 \\
-    \implies & y=2,\, x=1
-\end{align} 
 
 A plot for the line and parabola is given below
 \begin{figure}[!ht]
