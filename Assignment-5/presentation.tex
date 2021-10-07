@@ -1,0 +1,129 @@
+\documentclass{beamer}
+\usepackage{listings}
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\usepackage{blkarray}
+\usepackage{subcaption}
+\usepackage{url}
+\usepackage{tikz}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+%\usetkzobj{all}
+\usetikzlibrary{calc,math}
+\usepackage{float}
+\usepackage{bm}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+\usepackage[export]{adjustbox}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{physics}
+\usepackage{tikz}
+\usetikzlibrary{automata, positioning}
+\usetheme{Boadilla}
+% \providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+
+\title{Assignment 5 Presentation}
+\author{Chirag Mehta}
+\date{AI20BTECH11006}
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}
+\frametitle{Question}
+\begin{block}{Quadratic forms Q2.66}
+Find the point at which the line 
+$\myvec{-1 & 1}\vec{x}=1$ is a tangent to the curve $y^2=4x$    
+\end{block}
+\end{frame}
+
+\begin{frame}
+\frametitle{Solution}
+The general form of a conic is given by
+\begin{align}
+    \vec{x}^T\vec{Vx}+2\vec{u}^T\vec{x}+f=0 \label{eq:genConic}
+\end{align}
+for $y^2=4x$
+\begin{align}
+\vec{V}=\myvec{0 & 0 \\ 0 & 1},\ \vec{u}=\myvec{-2 \\0},\, f=0
+\end{align}
+\end{frame}
+
+\begin{frame}
+\frametitle{Solution Contd.}
+For any given conic such that $\vec{V}$ is non-invertible, the point of tangency is given by
+\begin{align}
+    \vec{Vq}&=k\vec{n}-u \\
+    \text{where},\, k& = \frac{\vec{p_1}^T\vec{u}}{\vec{p_1}^T\vec{n}},\, \vec{Vp_1}=0
+\end{align}
+Clearly
+\begin{align}
+    \vec{p_1}& =\myvec{1\\0} \\
+    \implies k & =\frac{-2}{-1}=2
+\end{align}
+\end{frame}
+
+\begin{frame}
+\frametitle{Solution Contd.}
+Using the obtained values
+\begin{align}
+    &\vec{Vq}=2\vec{n}-\vec{u}\\
+    &\vec{Vq}=\myvec{-2\\2}-\myvec{-2\\0}=2\vec{e_2}\\
+    &\vec{V}(\vec{q}-\vec{2e_2})=\vec{0} 
+\end{align}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Solution Contd.}
+    The basis vector for null space of $\vec{V}$ is $\vec{e_1}$
+\begin{align}
+    \therefore \vec{q}-2\vec{e_2}&=\lambda\vec{e_1} \\
+    \implies \vec{q}&=2\vec{e_2}+\lambda\vec{e_1} \label{eq:q_almostfound}
+\end{align}
+Using \eqref{eq:q_almostfound} and \eqref{eq:genConic}, we get
+\begin{align}
+    2\vec{q}^T\vec{e_2}-4\vec{e_1}^T\vec{q}=0
+\end{align}
+Evaluating this, we get
+\begin{align}
+    4-\lambda&=0 \\
+    \implies \vec{q}&=\myvec{1\\2}
+\end{align}
+\end{frame}
+
+% \begin{frame}
+%     \frametitle{Solution Contd.}
+    
+% \end{frame}
+
+\begin{frame}
+\frametitle{Solution Contd.}
+\begin{figure}[!h]
+    \centering
+    \includegraphics[width=0.8\columnwidth]{plot/figure_1}
+    \caption{Plot of the line and parabola}
+    \label{plot}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{Another approach to solve eq:8}
+\begin{align}
+    \vec{q}=\vec{A^+b+[I_n-A^+A]w}
+\end{align}
+where $\vec{A^+}$ is pseudoinverse of $\vec{A}$ and $\vec{w}$ is any $n\times 1$ vector\\
+For idempotent matrix, the pseudoinverse of the matrix is itself.
+\begin{align}
+    \vec{q}=\vec{Vb}+[\vec{I-V}]\vec{w} \\
+    \vec{q}=2\vec{e_2}+\lambda\vec{e_1}
+\end{align}
+\end{frame}
+\end{document}
