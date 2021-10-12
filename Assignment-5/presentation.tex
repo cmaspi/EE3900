@@ -58,17 +58,17 @@ $\myvec{-1 & 1}\vec{x}=1$ is a tangent to the curve $y^2=4x$
 
 \begin{frame}
     \begin{proof}
-        Let $\vec{Ax}=\vec{b}$ have at least one solution
+        \only<1>{Let $\vec{Ax}=\vec{b}$ have at least one solution
         \begin{align}
             \vec{Ax}&=\vec{b}\\
             \vec{AA}^+(\vec{Ax})&=\vec{AA}^+(\vec{b})
         \end{align}
         Using property of pseudoinverse
         \begin{align}
-            \vec{Ax}=\vec{A}^+\vec{Ab}=\vec{b}
+            \vec{Ax}=\vec{AA}^+\vec{b}=\vec{b}
         \end{align}
         Therefore, $\vec{A}^+\vec{b}$ is a specific solution.\\
-        The entire set of solution is given by $\vec{A}^+\vec{b}+\vec{k}$, where $\vec{k}$ is a vector in kernel space or null space of $\vec{A}$
+        }\only<2>{The entire set of solution is given by $\vec{A}^+\vec{b}+\vec{k}$, where $\vec{k}$ is a vector in kernel space or null space of $\vec{A}$
         \begin{align}
             \vec{A}\brak{\vec{A}^+\vec{b}+\vec{k}}&=\vec{b}\\
             \vec{b}+\vec{Ak}&=\vec{b}\\
@@ -79,20 +79,21 @@ $\myvec{-1 & 1}\vec{x}=1$ is a tangent to the curve $y^2=4x$
             \vec{k}=(\vec{I}-\vec{A}^+\vec{A})\vec{w} \label{eq:nullSpace}
         \end{align}
         where $\vec{w}$ is any vector with appropriate dimension.       
-        Now, we will prove that~\eqref{eq:nullSpace} holds true
+        }\only<3>{Now, we will prove that the above equation holds true
         \begin{align}
             \vec{k}&=(\vec{I-A}^+\vec{A})\vec{k}\\
             \vec{k}&=\vec{k}+\vec{A}^+(\vec{Ak})\\
             \therefore \vec{k}&=\vec{k}+\vec{A}^+(\vec{0})
         \end{align}
-        Therefore any vector in null space of $\vec{A}$ is also in the null space of $ \vec{I-A}^+\vec{A} $
+        Therefore any vector in null space of $\vec{A}$ is also in the image space of $ \vec{I-A}^+\vec{A} $
         \begin{align}
             \vec{A}(\vec{I-A}^+\vec{A})\vec{w}=(\vec{A}-\vec{A})\vec{w}=\vec{0}
         \end{align}
-        Therefore, the null space of $\vec{A}$ and $\vec{I-A}^+\vec{A}$ are the same
+        Therefore, the null space of $\vec{A}$ and image space of $\vec{I-A}^+\vec{A}$ are the same
         \begin{align}
             \vec{x}=\vec{A}^+\vec{b}+(\vec{I-A}^+\vec{A})\vec{w}
-        \end{align}
+        \end{align}}
+        \alt<3>{\qedhere}{\phantom\qedhere}
         \end{proof}
 \end{frame}
 
