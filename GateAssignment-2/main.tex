@@ -155,26 +155,74 @@ The 4-point discrete fourier transform (DFT) of a discrete time sequence $[1,0,2
     \item $[6,-1+3j,0,-1,-3j]$
 \end{enumerate}
 \section{Solution}
-\begin{lemma}
-    The N-point discrete fourier transform is given as $\vec{X}=\vec{Wx}$, where $\vec{x}$ is the input signal, $\vec{W}$ is the N-by-N square DFT matrix, and $\vec{X}$ is the DFT of the signal.\\
-    The transformation matrix $\vec{W}$ is given by
-    \begin{align}
-        \vec{W}=\myvec{1 & 1 & \dots & 1 \\ 1 & w & \dots & w^{N-1} \\ \vdots & \vdots & \ddots & \vdots\\ 1 & w^{N-1} & \dots & w^{(N-1)(N-1)}}
-    \end{align}
-    where $w=e^{\frac{-2\pi j}{N}}$
-\end{lemma}
+% \begin{lemma}
+%     The N-point discrete fourier transform is given as $\vec{X}=\vec{Wx}$, where $\vec{x}$ is the input signal, $\vec{W}$ is the N-by-N square DFT matrix, and $\vec{X}$ is the DFT of the signal.\\
+%     The transformation matrix $\vec{W}$ is given by
+%     \begin{align}
+%         \vec{W}=\myvec{1 & 1 & \dots & 1 \\ 1 & w & \dots & w^{N-1} \\ \vdots & \vdots & \ddots & \vdots\\ 1 & w^{N-1} & \dots & w^{(N-1)(N-1)}}
+%     \end{align}
+%     where $w=e^{\frac{-2\pi j}{N}}$
+% \end{lemma}
 
-The four point DFT matrix is given below
+% The four point DFT matrix is given below
+% \begin{align}
+%     W=\myvec{1 & 1 & 1 & 1\\ 1 & -j & -1 & j \\ 1 & -1 & 1 & -1 \\ 1 & j & -1 & -j}
+% \end{align}
+% Now,
+% \begin{align}
+%     \vec{X}=\vec{Wx}
+% \end{align}
+% On multiplying, we get 
+% \begin{align}
+%     X=\myvec{6\\-1+3j\\0\\-1-3j}
+% \end{align}
+% The correct answer is \textbf{option D}
+The discrete input signal is
 \begin{align}
-    W=\myvec{1 & 1 & 1 & 1\\ 1 & -j & -1 & j \\ 1 & -1 & 1 & -1 \\ 1 & j & -1 & -j}
+    x(n)=[1,0,2,3]
+\end{align}
+Let $\vec{F}_N$ be the N-point DFT matrix.\\
+Using the property of complex exponentials, we can express $\vec{F}_N$ in terms of $\vec{F}_{N/2}$
+\begin{align}
+    \vec{F}_N=\myvec{\vec{I}_{N/2} & \vec{D}_{N/2} \\ \vec{I}_{N/2} & -\vec{D}_{N/2}}\myvec{\vec{F}_{N/2} & \vec{0} \\ \vec{0} & \vec{F}_{N/2}}\vec{P}_N
+\end{align}
+For $N=4$
+\begin{align}
+    \vec{F}_4=\myvec{\vec{I}_2 & \vec{D}_{2} \\ \vec{I}_{2} & -\vec{D}_{2}}\myvec{\vec{F}_{2} & \vec{0} \\ \vec{0} & \vec{F}_{2}}\vec{P}_4
+\end{align}
+$I_{2}$ is $2\times 2$ matrix
+\begin{align}
+    \vec{D}_2 & =\myvec{w_4^0 & 0\\0 & w_4^1}\\
+    \vec{P}_4 & =\myvec{1&0&0&0\\0&0&1&0\\0&1&0&0\\0&0&0&1}
 \end{align}
 Now,
 \begin{align}
-    \vec{X}=\vec{Wx}
+    \myvec{X(0)\\X(1)}&=\myvec{X_e(0)\\X_e(1)}+\vec{D}_2\myvec{X_o(0)\\X_o(1)}\\
+    \myvec{X(2)\\X(3)}&=\myvec{X_e(0)\\X_e(1)}-\vec{D}_2\myvec{X_o(0)\\X_o(1)}
 \end{align}
-On multiplying, we get 
+This results in
 \begin{align}
-    X=\myvec{6\\-1+3j\\0\\-1-3j}
+    \myvec{X(0)\\X(1)} & =\vec{F}_2\myvec{1\\2}+\myvec{1&0\\0&-j}\vec{F}_2\myvec{0\\3}\\    
+    \myvec{X(0)\\X(1)} & =\myvec{3\\-1}+\myvec{3\\3j}\\
+    \myvec{X(0)\\X(1)} & =\myvec{6\\-1+3j}
+\end{align}
+and
+\begin{align}
+    \myvec{X(2)\\X(3)}&=\vec{F}_2\myvec{1\\2}-\myvec{1&0\\0&-j}\vec{F}_2\myvec{0\\3}\\    
+    \myvec{X(2)\\X(3)}&=\myvec{3\\-1}-\myvec{3\\3j}\\
+    \myvec{X(2)\\X(3)}&=\myvec{0\\-1-3j}
 \end{align}
 The correct answer is \textbf{option D}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\columnwidth]{plot/magnitude}
+    \caption{Magnitude of $X(k)$}
+    \label{magnitude}
+\end{figure}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\columnwidth]{plot/phase}
+    \caption{Phase of $X(k)$}
+    \label{magnitude}
+\end{figure}
 \end{document}
