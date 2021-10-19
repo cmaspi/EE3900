@@ -186,6 +186,21 @@ Using the property of complex exponentials, we can express $\vec{F}_N$ in terms 
 \begin{align}
     \vec{F}_N=\myvec{\vec{I}_{N/2} & \vec{D}_{N/2} \\ \vec{I}_{N/2} & -\vec{D}_{N/2}}\myvec{\vec{F}_{N/2} & \vec{0} \\ \vec{0} & \vec{F}_{N/2}}\vec{P}_N
 \end{align}
+Where
+\begin{align}
+    \vec{F}_N=\myvec{1 & 1 & \cdots & 1 \\ 1 & w & \cdots & w^{N-1} \\ \vdots & \vdots & \ddots & \vdots\\ 1 & w^{N-1} & \cdots & w^{(N-1)(N-1)}}
+\end{align}
+where $w=e^{\frac{-2\pi j}{N}}$
+\begin{align}
+\vec{D}_N=\myvec{w_{2N}^0 & 0 & \cdots\\ 0 & w_{2N}^1 &  \cdots \\ \vdots & \vdots & \ddots }\\
+\vec{D}_N=\text{diag}(w_{2N}^0,w_{2N}^1,\ldots,w_{2N}^{N-1})
+\end{align}
+$P_N$ is the permutation matrix
+\begin{align}
+\vec{P}_N=\myvec{1&0&0&\cdots\\0&0&1&\cdots\\ \vdots & \vdots & \vdots & \ddots}
+\end{align}
+
+
 For $N=4$
 \begin{align}
     \vec{F}_4=\myvec{\vec{I}_2 & \vec{D}_{2} \\ \vec{I}_{2} & -\vec{D}_{2}}\myvec{\vec{F}_{2} & \vec{0} \\ \vec{0} & \vec{F}_{2}}\vec{P}_4
@@ -212,7 +227,7 @@ and
     \myvec{X(2)\\X(3)}&=\myvec{3\\-1}-\myvec{3\\3j}\\
     \myvec{X(2)\\X(3)}&=\myvec{0\\-1-3j}
 \end{align}
-The correct answer is \textbf{option D}
+The correct answer is \textbf{option 4}
 \begin{figure}[!ht]
     \centering
     \includegraphics[width=\columnwidth]{plot/magnitude}
