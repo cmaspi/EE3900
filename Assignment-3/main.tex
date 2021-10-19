@@ -67,7 +67,7 @@ columns=fullflexible
 \setlength{\@fptop}{0pt}
 \makeatother
 \begin{document}
-
+\newtheorem{theorem}{Theorem}[section]
 \newcommand{\BEQA}{\begin{eqnarray}}
 \newcommand{\EEQA}{\end{eqnarray}}
 \newcommand{\define}{\stackrel{\triangle}{=}}
@@ -145,38 +145,144 @@ Take two points $\vec{P}$ and $\vec{Q}$ on one of its extended
 diameter each at a distance of $7$ units from its centre.
 Draw tangents to the circle from these two points $\vec{P}$ and $\vec{Q}$ 
 \section{Solution}
-\begin{lemma}
-  The points of contact for the tangent drawn from a point 
-  \begin{align}
-    \vec{P} = d\vec{e}_1, \text{ where } \vec{e}_1 = \myvec{1\\0}
-  \end{align}
-  to the circle are given by 
-  \begin{align}
-    \vec{x} = \frac{r^2}{d}\vec{e}_1  \pm r\sqrt{1 - \frac{r^2}{d^2}} \vec{e}_2 \label{eq:pointOfTangency}
-  \end{align}  
-\end{lemma}
-\begin{proof}
-If $\vec{x}$ be a point of contact for the tangent from $\vec{P}$, 
+\begin{theorem}
+  The points of intersection of the line 
 \begin{align}
-  \vec{(P-x)}^T\vec{x}&=0 \\
-  \implies \vec{P}^{\top} \vec{x} &=\norm{\vec{x}}^2 = r^2\\
-  \implies \vec{e}_1^{\top} \vec{x} &= \frac{r^2}{d}
+L: \quad \vec{x} = \vec{q} + \mu \vec{m} \quad \mu \in \mathbb{R}
+\label{eq:conic_tangent}
 \end{align}
-The above equation can be expressed in parametric form as 
+with a general conic are given by
 \begin{align}
-  \vec{x} = \frac{r^2}{d}\vec{e}_1 + \lambda \vec{e}_2
+\vec{x}_i = \vec{q} + \mu_i \vec{m}
 \end{align}
-Substituting the above in 
+%
+where
+\begin{multline}
+\mu_i = \frac{1}
+{
+\vec{m}^T\vec{V}\vec{m}
+}
+\lbrak{-\vec{m}^T\brak{\vec{V}\vec{q}+\vec{u}}}
+\\
+\pm
+{\small
+\rbrak{\sqrt{
+\sbrak{
+\vec{m}^T\brak{\vec{V}\vec{q}+\vec{u}}
+}^2
+-
+\brak
+{
+\vec{q}^T\vec{V}\vec{q} + 2\vec{u}^T\vec{q} +f
+}
+\brak{\vec{m}^T\vec{V}\vec{m}}
+}
+}
+}
+\label{eq:tangent_roots}
+\end{multline}
+\end{theorem}
+The general form of a conic is given by
 \begin{align}
-  \norm{\vec{x}}^2 = r^2,
+  \vec{x}^T\vec{Vx}+2\vec{u}^T\vec{x}+f=0 \label{eq:conic}
 \end{align}
-yields
+for a circle, $\vec{V}=\vec{I}$ and $\vec{u}=-\vec{O}$ where $\vec{O}$ is the center of the circle.\\
+Let $\vec{q}$ be the locus of the point of tangency from point $\vec{P}$, the distance of $\vec{P}$ from $\vec{O}$ is $d$ 
 \begin{align}
-  \norm{\frac{r^2}{d}\vec{e}_1 + \lambda \vec{e}_2}^2&=r^2\\
-  \implies \lambda^2 &= r^2\sbrak{1 - \frac{r^2}{d^2}}\\
-  \text{or, }\lambda &= \pm r\sqrt{1 - \frac{r^2}{d^2}}
+  \vec{q-O}^T\vec{q-P}&=0\\
+  \vec{q+u}^T\vec{q-P}&=0\\
+  \vec{q}^T\vec{q}+\vec{u}^T\vec{q}-\vec{u}^T\vec{P}-\vec{q}^T\vec{P}&=0
+\end{align} 
+Using~\eqref{eq:conic}
+\begin{align}
+  (\vec{u+p})^T\vec{q}=-f-\vec{u}^T\vec{P}
 \end{align}
-\end{proof}
+Let $\vec{n}=\vec{u+P}$ and $c=-f-\vec{u}^T\vec{P}$
+This is equation of a line, let $\vec{q}=\vec{a}$ be a point that lies on this line
+\begin{align}
+  \therefore \vec{q}=\vec{a}+\lambda\myvec{-\vec{e_1}^T\vec{n}\\\vec{e_2}^T\vec{n}}
+\end{align}
+We need to find the intersection point of this with the given circle.\\
+Using~\eqref{eq:tangent_roots}
+\begin{align}
+  \vec{q} = \vec{a} + \mu_i \vec{m}
+\end{align}
+\begin{multline}
+  \mu_i = \frac{1}
+  {
+  d^2
+  }
+  \lbrak{-\vec{m}^T\brak{\vec{a}+\vec{u}}}
+  \\
+  \pm
+  {\small
+  \rbrak{\sqrt{
+  \sbrak{
+  \vec{m}^T\brak{\vec{a}+\vec{u}}
+  }^2
+  -
+  \brak
+  {
+  \vec{a}^T\vec{a} + 2\vec{u}^T\vec{a} +f
+  }
+  d^2
+  }
+  }
+  }
+\label{eq:sol}
+\end{multline}
+Now, we can confirm the solution by checking for $\vec{u}=\vec{0},\, \vec{P}=d\vec{e}_1,\, f=-r^2$
+\begin{align}
+  \implies \vec{n}=d\vec{e}_1,\, \vec{m}=d\vec{e}_2
+\end{align}
+An arbitrary choice of $\vec{a}$ could be $\frac{r^2}{d}\vec{e}_1$,
+\begin{align}
+  \mu_i &= \pm\frac{1}
+  {
+  d^2
+  }
+  {\small
+  \sqrt{
+  \brak{r^2d^2-r^4}
+  }
+  }\\
+  \vec{q}&=\frac{r^2}{d}\vec{e}_1 \pm r \small\sqrt{1-\frac{r^2}{d}} \label{eq:pointOfTangency}
+\end{align}
+
+
+
+% \begin{lemma}
+%   The points of contact for the tangent drawn from a point 
+%   \begin{align}
+%     \vec{P} = d\vec{e}_1, \text{ where } \vec{e}_1 = \myvec{1\\0}
+%   \end{align}
+%   to the circle are given by 
+%   \begin{align}
+%     \vec{x} = \frac{r^2}{d}\vec{e}_1  \pm r\sqrt{1 - \frac{r^2}{d^2}} \vec{e}_2 \label{eq:pointOfTangency}
+%   \end{align}  
+% \end{lemma}
+% \begin{proof}
+% If $\vec{x}$ be a point of contact for the tangent from $\vec{P}$, 
+% \begin{align}
+%   \vec{(P-x)}^T\vec{x}&=0 \\
+%   \implies \vec{P}^{\top} \vec{x} &=\norm{\vec{x}}^2 = r^2\\
+%   \implies \vec{e}_1^{\top} \vec{x} &= \frac{r^2}{d}
+% \end{align}
+% The above equation can be expressed in parametric form as 
+% \begin{align}
+%   \vec{x} = \frac{r^2}{d}\vec{e}_1 + \lambda \vec{e}_2
+% \end{align}
+% Substituting the above in 
+% \begin{align}
+%   \norm{\vec{x}}^2 = r^2,
+% \end{align}
+% yields
+% \begin{align}
+%   \norm{\frac{r^2}{d}\vec{e}_1 + \lambda \vec{e}_2}^2&=r^2\\
+%   \implies \lambda^2 &= r^2\sbrak{1 - \frac{r^2}{d^2}}\\
+%   \text{or, }\lambda &= \pm r\sqrt{1 - \frac{r^2}{d^2}}
+% \end{align}
+% \end{proof}
 Let $\vec{A}, \vec{B}$ be the corresponding points of tangency from $\vec{P}=7\vec{e_1}$ and 
 $\vec{C}, \vec{D}$ be the corresponding points of tangency from $\vec{Q}=-7\vec{e_1}$.\\
 Using \eqref{eq:pointOfTangency}, we obtain all the points of tangency.
