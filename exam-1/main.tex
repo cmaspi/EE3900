@@ -162,6 +162,20 @@ From the input signal figure
 \begin{align}
     x[n]=\delta[n-1] \label{eq:input}
 \end{align}
+The plot of $x[n]$ is given below
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{plot/x}
+    \caption{plot of $x$}
+    \label{x}
+\end{figure}
+The plot of $h[n]$ is given below 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\columnwidth]{plot/h}
+    \caption{plot of $h$}
+    \label{magnitude}
+\end{figure}
 from~\eqref{eq:convo} and~\eqref{eq:input}, we get
 \begin{align}
     y[n]&=\delta[n-1]*h[n]\\
@@ -172,7 +186,7 @@ from~\eqref{eq:convo} and~\eqref{eq:input}, we get
     \centering
     \includegraphics[width=\columnwidth]{plot/convo}
     \caption{plot of $y$}
-    \label{magnitude}
+    \label{y}
 \end{figure}
 
 \end{document}
