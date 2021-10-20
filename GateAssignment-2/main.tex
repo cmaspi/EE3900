@@ -195,11 +195,17 @@ where $w=e^{\frac{-2\pi j}{N}}$
 \vec{D}_N=\myvec{w_{2N}^0 & 0 & \cdots\\ 0 & w_{2N}^1 &  \cdots \\ \vdots & \vdots & \ddots }\\
 \vec{D}_N=\text{diag}(w_{2N}^0,w_{2N}^1,\ldots,w_{2N}^{N-1})
 \end{align}
-$P_N$ is the permutation matrix
+$P_{2N}$ is the permutation matrix defined as 
 \begin{align}
-\vec{P}_N=\myvec{1&0&0&\cdots\\0&0&1&\cdots\\ \vdots & \vdots & \vdots & \ddots}
+    \vec{P}_N&=\sbrak{a_{ij}}_{N\times N},\, i,j\in\cbrak{0,1,\ldots,N-1}\\
+	a_{ij} &=
+\begin{cases}
+1 & j=2i,\, i<\frac{N}{2}\\
+1 &  j=2\brak{i-\frac{N}{2}}+1,\, i\geq \frac{N}{2}\\
+0 & otherwise
+\end{cases}
+\label{eq:final_result}
 \end{align}
-
 
 For $N=4$
 \begin{align}
