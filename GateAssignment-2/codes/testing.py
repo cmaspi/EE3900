@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 x=np.array([1,1,1])
 
 plt.stem(x,label='$x[n]$')
+plt.grid()
 plt.legend()
 plt.show()
 
