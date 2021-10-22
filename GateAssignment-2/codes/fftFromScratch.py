@@ -43,8 +43,18 @@ def F(N):
 #         DXo = np.matmul(D(n//2),Xo)
 #         return np.append(Xe.T+DXo.T,Xe.T-DXo.T).T
 
-def fft(x):
-    n=len(x)
+def fft(x,N=None):
+    if N is None:
+        n=len(x)
+        x=np.append(x,np.zeros(int(pow(2,np.ceil(np.log2(n)))-n)))
+        n=len(x)
+    else:
+        if np.ceil(np.log2(N))-np.log2(N)<1e-6 and N> len(x):
+            x=np.append(x,np.zeros(N-len(x)))
+            n=len(x)
+        else:
+            raise ValueError("N should be greater than length of sequence and should be an integral power of 2")
+
     if n==2:
         # stopping step, constant time
         return np.matmul(F(2),x)
@@ -69,4 +79,4 @@ def fft(x):
         return np.append(Xe.T+DXo.T,Xe.T-DXo.T).T
 
 # Testing for given input
-print(fft(np.array([1,0,2,3]).T))
+# print(fft(np.array([1,0,2,3])))
