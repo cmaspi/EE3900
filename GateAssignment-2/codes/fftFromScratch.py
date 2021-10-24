@@ -75,8 +75,9 @@ def fft(x,N=None):
         # \therefore T(n) is O(n log n)
         Xe=fft(xe)
         Xo=fft(xo)
-        DXo = np.matmul(D(n//2),Xo)
+        # DXo = np.matmul(D(n//2),Xo)
+        DXo = np.array([np.exp(-2j*i*np.pi/n)*Xo[i] for i in range(n//2)])
         return np.append(Xe.T+DXo.T,Xe.T-DXo.T).T
 
 # Testing for given input
-# print(fft(np.array([1,0,2,3])))
+# print(fft(np.array([1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16])))
