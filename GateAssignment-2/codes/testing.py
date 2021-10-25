@@ -44,8 +44,8 @@ for i in series2:
 
 print(timeDict.values())
 
-
-plt.plot(timeDict.keys(),timeDict.values(),label='time taken for differen N')
+plt.scatter(timeDict.keys(),timeDict.values(),color='red',label='time taken for differen N')
+plt.plot(timeDict.keys(),timeDict.values(),'r')
 
 # building a n log n series
 NLOGn=nlogn(series2)
@@ -59,7 +59,7 @@ n = np.array(NLOGn,dtype=float)
 # the solution is 
 # (x.T n) /(n.T n)
 k=np.dot(x,n)/np.dot(n,n)
-
+print(k)
 NLOGn=k*NLOGn
 # plotting N log N
 plt.plot(series2,NLOGn, label='$k N \log N$')
