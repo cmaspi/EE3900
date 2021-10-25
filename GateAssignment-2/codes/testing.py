@@ -63,6 +63,8 @@ print(k)
 NLOGn=k*NLOGn
 # plotting N log N
 plt.plot(series2,NLOGn, label='$k N \log N$')
+plt.xlabel("Value of $n$")
+plt.ylabel("Time in seconds")
 plt.grid()
 plt.legend()
 plt.show()
