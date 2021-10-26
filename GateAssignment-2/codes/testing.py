@@ -45,7 +45,6 @@ for i in series2:
 print(timeDict.values())
 
 plt.scatter(timeDict.keys(),timeDict.values(),color='red',label='time taken for differen N')
-plt.plot(timeDict.keys(),timeDict.values(),'r')
 
 # building a n log n series
 NLOGn=nlogn(series2)
